@@ -9,6 +9,7 @@ class TelegramUser(BaseModel):
 
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     full_name = models.CharField(max_length=100, null=True, blank=True)
+    nickname = models.CharField(max_length=100, null=True, blank=True)
     username = models.CharField(
         _("username"),
         max_length=150,

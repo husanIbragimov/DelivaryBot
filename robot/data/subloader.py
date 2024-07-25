@@ -1,3 +1,8 @@
+import os
+from ujson import loads # pip install ujson
+import aiofiles # pip install aiofiles
+
+
 # def get_json(filename: str) -> list:
 #     path = f"data/{filename}"
 #     if os.path.exists(path):

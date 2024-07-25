@@ -10,4 +10,5 @@ class UserCreateSerializer(serializers.ModelSerializer):
             "username",
             "phone_number",
             "full_name",
+            "nickname",
         )

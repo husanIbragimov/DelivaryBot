@@ -9,6 +9,7 @@ class UserCreateTestCase(APITestCase):
         self.data = {
             "telegram_id": "663153232",
             "username": "Husan_SWE",
+            "nickname": "Husan",
             "full_name": "Husan Ibragimov",
             "phone_number": "+998998989898"
         }

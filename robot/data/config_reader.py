@@ -1,17 +1,17 @@
-import os
+from environs import Env
 
-from dotenv import load_dotenv  # pip install python-dotenv
+env = Env()
+env.read_env()
 
-load_dotenv()
-
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-ADMIN_ID = os.getenv('ADMIN_ID').split(', ')
-CHANNEL_ID = os.getenv('CHANNEL_ID', '-1001275637856').split(', ')
-BASE_URL = os.getenv('BASE_URL', 'http://localhost:8000')
+BOT_TOKEN = env.str('BOT_TOKEN')
+ADMIN_ID = env.list('ADMIN_ID')
+CHANNEL_ID = env.list('CHANNEL_ID', '-1001275637856')
 # print(CHANNEL_ID)
 
 # postgres
-DB_USER = os.getenv('DB_USER')
-DB_PASS = os.getenv('DB_PASS')
-DB_NAME = os.getenv('DB_NAME')
-DB_HOST = os.getenv('DB_HOST')
+DB_USER = env.str('DB_USER')
+DB_PASS = env.str('DB_PASS')
+DB_NAME = env.str('DB_NAME')
+DB_HOST = env.str('DB_HOST')
+
+BASE_URL = env.str('BASE_URL')

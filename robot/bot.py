@@ -1,5 +1,5 @@
 import asyncio
-from handlers import bot_messages, user_commands, questionaire
+from handlers import user_register
 from callbaks import pagination
 from middlewares.check_sub import CheckSubs
 from middlewares.throttling import ThrottlingMiddleware
@@ -18,10 +18,11 @@ async def main():
     dp.message.middleware(ThrottlingMiddleware())
     
     dp.include_routers(
-        user_commands.router,
-        questionaire.router,
-        pagination.router,
-        bot_messages.router
+        user_register.router,
+        # user_commands.router,
+        # questionaire.router,
+        # pagination.router,
+        # bot_messages.router
     )
     await set_private_default_commands(bot)
     await on_startup_notify(bot)
